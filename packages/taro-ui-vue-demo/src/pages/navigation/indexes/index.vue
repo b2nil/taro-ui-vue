@@ -54,7 +54,7 @@ export default {
       if (!this.value) {
         return
       }
-      this.scrollToView && this.scrollToView(this.value.toUpperCase())
+      this.scrollIntoView && this.scrollIntoView(this.value.toUpperCase())
       this.value = ''
     },
 
@@ -63,7 +63,7 @@ export default {
     },
 
     handleScroll(fn) {
-      this.scrollToView = fn
+      this.scrollIntoView = fn
     }
   },
 }
