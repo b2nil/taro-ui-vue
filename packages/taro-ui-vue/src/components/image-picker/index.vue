@@ -1,20 +1,15 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
-    <view 
+  <view :class="rootCls" :style="customStyle">
+    <view
       v-for="(row, i) in matrix"
-      class="at-image-picker__flex-box" 
+      class="at-image-picker__flex-box"
       :key="i + 1"
     >
-      <template 
-        v-for="(item, j) in row"
-      >
-        <view 
-          v-if="item.url" 
-          class="at-image-picker__flex-item" 
-          :key="i * length + j"
+      <template v-for="(item, j) in row">
+        <view
+          v-if="item.url"
+          class="at-image-picker__flex-item"
+          :key="`img${i * length + j}`"
         >
           <view class="at-image-picker__item">
             <view
@@ -29,10 +24,10 @@
             />
           </view>
         </view>
-        <view 
+        <view
           v-else
-          class="at-image-picker__flex-item" 
-          :key="i * length + j"
+          class="at-image-picker__flex-item"
+          :key="`btn${i * length + j}`"
         >
           <view
             v-if="item.type === 'btn'"
